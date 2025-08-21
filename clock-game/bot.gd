@@ -3,10 +3,11 @@ extends CharacterBody2D
 var colour_from_main = "none"
 var speed = 4
 var current_pos = Vector2(6.0, 1.0)
-
+var since_last_movement := 0
 
 func _on_main_col_changed(col) -> void:
 	colour_from_main = col
+	since_last_movement += 1
 
 func _on_area_2d_colourfound(postomoveto, colour) -> void:
 	if colour == colour_from_main:
@@ -14,6 +15,7 @@ func _on_area_2d_colourfound(postomoveto, colour) -> void:
 		if Vector2(postomoveto) in allowed_pos:
 			var index = allowed_pos.find(Vector2(postomoveto))
 			move_based_on_pos(index, Vector2(postomoveto))
+			since_last_movement = 0
 
 func generate_allowed_list():
 	var l = []

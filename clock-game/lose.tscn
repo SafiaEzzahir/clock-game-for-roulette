@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bco73i5ev1i0p"]
+
+[ext_resource type="Texture2D" uid="uid://br6k8rdsj03g8" path="res://backgroundfornow.png" id="1_rtc1j"]
+[ext_resource type="Script" uid="uid://dnea7quof277d" path="res://retrybutton.gd" id="2_pl8j0"]
+
+[node name="lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_rtc1j")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 147.0
+offset_right = 610.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 150
+text = "you lose"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 362.0
+offset_right = 791.0
+offset_bottom = 397.0
+theme_override_font_sizes/font_size = 25
+text = "you stopped working for too long - and the bosses noticed!"
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 448.0
+offset_right = 1102.0
+offset_bottom = 578.0
+theme_override_font_sizes/font_size = 25
+text = "reboot"
+script = ExtResource("2_pl8j0")
+
+[connection signal="button_up" from="Retry" to="Retry" method="_on_button_up"]
