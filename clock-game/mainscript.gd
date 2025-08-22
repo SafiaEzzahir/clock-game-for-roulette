@@ -1,5 +1,4 @@
 extends Node2D
-
 var next_col = "black"
 var timer := 0
 var timer_speed := 120
@@ -13,6 +12,7 @@ func _process(delta: float) -> void:
 		_change_col()
 	elif timer == timer_speed:
 		timer = -1
+	
 	timer += 1
 	_did_you_lose()
 

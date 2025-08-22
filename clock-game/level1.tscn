@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://byeybfij1xdyh" path="res://isometrictiles2.png" id="2_usj0q"]
 [ext_resource type="Script" uid="uid://qjwfs3ctmj61" path="res://tile_map.gd" id="3_5j5gb"]
 [ext_resource type="Script" uid="uid://0n5srbf5nvgo" path="res://bot.gd" id="4_mx85b"]
-[ext_resource type="Texture2D" uid="uid://cnqy5xqne0owc" path="res://icon.svg" id="5_hx44q"]
+[ext_resource type="Texture2D" uid="uid://b6oqfhqglxqfm" path="res://lilguy.png" id="5_xy4tn"]
 [ext_resource type="Script" uid="uid://b4cb0bkwjlniy" path="res://area_2d.gd" id="6_n8vhr"]
 [ext_resource type="Texture2D" uid="uid://f0ja1lvry8fx" path="res://black.png" id="7_eqrsh"]
 [ext_resource type="Script" uid="uid://cs7ryt6aomhpa" path="res://texture_rect.gd" id="8_3l65w"]
@@ -208,7 +208,7 @@ custom_data_layer_0/type = 4
 sources/2 = SubResource("TileSetAtlasSource_1bvp3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
-size = Vector2(83, 75)
+size = Vector2(51, 53)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
 
@@ -227,15 +227,16 @@ script = ExtResource("3_5j5gb")
 script = ExtResource("4_mx85b")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bot"]
-position = Vector2(2, 38)
-scale = Vector2(0.640625, 0.59375)
-texture = ExtResource("5_hx44q")
+z_index = 700
+position = Vector2(1.5, 38.5)
+scale = Vector2(5.1875, 4.6875)
+texture = ExtResource("5_xy4tn")
 
 [node name="Area2D" type="Area2D" parent="Bot"]
 script = ExtResource("6_n8vhr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bot/Area2D"]
-position = Vector2(1.5, 38.5)
+position = Vector2(2.5, 49.5)
 shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bot"]
